@@ -1,0 +1,507 @@
+body{
+
+background-image:url("background.png");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+color:white;
+
+font-family:Arial;
+
+text-align:center;
+
+margin:0;
+
+height:100vh;
+
+}
+
+h1{
+
+margin-top:10px;
+
+}
+
+#container{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+align-items:center;
+
+}
+
+canvas{
+
+background:black;
+
+border:4px solid white;
+
+}
+
+#scoreboard{
+
+font-size:22px;
+
+}
+
+#quiz{
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+background:white;
+
+color:black;
+
+padding:20px;
+
+border-radius:10px;
+
+width:400px;
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+button{
+
+display:block;
+
+margin:10px auto;
+
+padding:10px;
+
+width:90%;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+#startScreen{
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+background:#020617;
+
+padding:30px;
+
+border-radius:15px;
+
+border:3px solid white;
+
+}
+
+#gameOver{
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+background:red;
+
+padding:30px;
+
+border-radius:15px;
+
+}
+
+.correct{
+
+background:green;
+
+color:white;
+
+padding:10px;
+
+margin-top:10px;
+
+}
+
+.wrong{
+
+background:darkred;
+
+color:white;
+
+padding:10px;
+
+margin-top:10px;
+
+}
+
+#ranking{
+
+background:rgba(0,0,0,.85);
+
+color:white;
+
+padding:15px;
+
+border-radius:12px;
+
+margin-left:20px;
+
+width:200px;
+
+box-shadow:0 0 15px cyan;
+
+font-family:Arial;
+
+}
+
+#ranking h2{
+
+text-align:center;
+
+color:cyan;
+
+}
+
+#playersList{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.player{
+
+display:flex;
+
+justify-content:space-between;
+
+background:#111;
+
+margin:5px 0;
+
+padding:8px;
+
+border-radius:8px;
+
+border:1px solid cyan;
+
+}
+
+.startAnim{
+
+box-shadow:
+0 0 20px cyan,
+0 0 40px cyan;
+
+transition:0.3s;
+
+}
+
+#startBtn{
+
+background:linear-gradient(45deg,cyan,blue);
+
+border:none;
+
+padding:15px 30px;
+
+font-size:20px;
+
+color:white;
+
+border-radius:12px;
+
+cursor:pointer;
+
+box-shadow:0 0 15px cyan;
+
+transition:.3s;
+
+}
+
+#startBtn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 25px cyan;
+
+}
+
+.againBtn{
+
+background:linear-gradient(red,orange);
+
+padding:15px 30px;
+
+border:none;
+
+font-size:22px;
+
+color:white;
+
+border-radius:15px;
+
+box-shadow:0 0 20px red;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.againBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+.answerResult{
+
+font-size:35px;
+
+text-align:center;
+
+color:white;
+
+padding:30px;
+
+background:black;
+
+border-radius:15px;
+
+animation:pop .5s ease;
+
+box-shadow:0 0 20px cyan;
+
+}
+
+@keyframes pop{
+
+0%{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+#startBtn{
+
+background:linear-gradient(45deg,cyan,blue);
+
+border:none;
+
+padding:15px 30px;
+
+font-size:20px;
+
+color:white;
+
+border-radius:12px;
+
+cursor:pointer;
+
+box-shadow:0 0 15px cyan;
+
+transition:.3s;
+
+}
+
+#startBtn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 25px cyan;
+
+}
+
+.againBtn{
+
+background:linear-gradient(red,orange);
+
+padding:15px 30px;
+
+border:none;
+
+font-size:22px;
+
+color:white;
+
+border-radius:15px;
+
+box-shadow:0 0 20px red;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.againBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+/* PANTALLA INTRO ARCADE */
+
+#introScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+color:#00ffff;
+font-size:60px;
+font-family:monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+z-index:999;
+animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink{
+from{opacity:1;}
+to{opacity:0.6;}
+}
+
+#quiz{
+background: rgba(0,0,0,0.85);
+backdrop-filter: blur(6px);
+border: 2px solid cyan;
+border-radius: 15px;
+box-shadow: 0 0 25px cyan;
+color: white;
+font-family: 'Orbitron', sans-serif;
+}
+
+#answers button{
+background: black;
+color: cyan;
+border: 1px solid cyan;
+padding: 10px;
+margin: 8px 0;
+border-radius: 8px;
+transition: 0.3s;
+}
+
+#answers button:hover{
+background: cyan;
+color: black;
+box-shadow: 0 0 15px cyan;
+}
+
+/* ===== CENTRAR TODO EL JUEGO ===== */
+
+html, body{
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow-x:hidden; /* elimina scroll lateral */
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    height:100vh; /* cambiamos min-height por height */
+    padding-top:20px; /* menos espacio arriba */
+    overflow:hidden; /* elimina scroll vertical y horizontal */
+}
+
+/* contenedor principal */
+#container{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+/* título centrado */
+h1{
+    text-align:center;
+}
+
+/* start screen centrado */
+#startScreen{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+body{
+    overflow-y:hidden;
+}
+
+/* ===== FUENTE ARCADE ===== */
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+    color: cyan;
+    text-shadow: 
+        0 0 5px cyan,
+        0 0 10px cyan,
+        0 0 20px blue;
+    margin-bottom:30px;
+}
+
+@keyframes glow{
+    0%{ text-shadow: 0 0 5px cyan; }
+    50%{ text-shadow: 0 0 20px blue; }
+    100%{ text-shadow: 0 0 5px cyan; }
+}
+
+h1{
+    animation: glow 2s infinite alternate;
+}
+
+html{
+    overflow:hidden;
+}
+
+#gameWrapper{
+    transform: scale(0.87);
+    transform-origin: top center;
+}

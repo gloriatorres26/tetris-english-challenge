@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Tetris English Class</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="gameWrapper">
+
+<h1>Tetris English Challenge</h1>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" 
+
+rel="stylesheet">
+
+<div id="startScreen">
+
+<h2>English Tetris Challenge</h2>
+
+<button id="startBtn">
+
+START GAME
+
+</button>
+
+<input id="playerName"
+
+placeholder="Write your name"
+
+style="padding:10px;margin-top:10px;">
+
+<input id="roomCode"
+
+placeholder="Class Code"
+
+style="padding:10px;margin-top:10px;">
+
+</div>
+
+<div id="container">
+
+<canvas id="game" width="300" height="600"></canvas>
+
+<div id="scoreboard">
+
+<div id="ranking">
+
+<h2>🏆 Students Ranking</h2>
+
+<ul id="playersList"></ul>
+
+</div>
+
+<h2>Puntos de tetris</h2>
+
+<p id="score">0</p>
+
+<h2>Time</h2>
+<p id="gameTimerDisplay">120</p>
+
+</div>
+
+</div>
+
+
+<div id="quiz" class="hidden">
+
+<h2 id="question"></h2>
+
+<div id="answers"></div>
+
+</div>
+
+<div id="gameOver" class="hidden">
+
+<h1>GAME OVER</h1>
+
+<button class="againBtn" onclick="location.reload()">
+
+PLAY AGAIN
+
+</button>
+
+</div>
+
+<audio id="music" loop>
+
+<source src="music.mp3">
+
+</audio>
+
+<audio id="correctSound">
+<source src="correct.mp3">
+</audio>
+
+<audio id="wrongSound">
+<source src="wrong.mp3">
+</audio>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+<script>
+
+const firebaseConfig = {
+
+apiKey:"AIzaSyDbSeuQXpHWcicxZNJNM_0HN57XQZ7_9VI",
+
+authDomain:"base-de-datos-938d3.firebaseapp.com",
+
+databaseURL:"https://base-de-datos-938d3-default-rtdb.firebaseio.com",
+
+projectId:"base-de-datos-938d3",
+
+storageBucket:"base-de-datos-938d3.firebasestorage.app",
+
+messagingSenderId:"170478210181",
+
+appId:"1:170478210181:web:3738fc691d905004846dec",
+
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const database = firebase.database();
+  
+</script>
+
+<script src="game.js"></script>
+
+</div>
+
+</body>
+
+
+</html>
+
