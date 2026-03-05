@@ -45,6 +45,9 @@ let gameTimeLeft;
 
 let score=0;
 
+let firstTryScore = null;
+let secondTryScore = null;
+
 let lastPieceIndex = null;
 
 let piecesForQuiz = 3;  // empieza cada 3 fichas
@@ -678,6 +681,15 @@ overSound.play();
 
 clearInterval(gameLoop);
 
+// 🔥 guardar primer intento
+if(firstTryScore === null){
+   firstTryScore = score;
+   updateTryTables();
+}else{
+   secondTryScore = score;
+   updateTryTables();
+}
+    
 document.getElementById("gameOver")
 .classList.remove("hidden");
 
@@ -752,6 +764,21 @@ function drawRanking(){
 
 }
 
+function updateTryTables(){
+
+let firstTable = document.getElementById("firstTryScore");
+let secondTable = document.getElementById("secondTryScore");
+
+if(firstTable){
+   firstTable.innerText = firstTryScore ?? "-";
+}
+
+if(secondTable){
+   secondTable.innerText = secondTryScore ?? "-";
+}
+
+}
+
 document.addEventListener("keydown", function(e){
 
 if(e.key === "m"){
@@ -784,3 +811,4 @@ function activateRealtimeRanking(){
    });
 
 }
+
