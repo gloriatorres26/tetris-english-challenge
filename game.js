@@ -765,6 +765,22 @@ function drawRanking(){
 
 }
 
+function saveTryScore(points){
+
+if(firstTry === null){
+
+firstTry = points;
+document.getElementById("firstTryScore").innerText = points;
+
+}else if(secondTry === null){
+
+secondTry = points;
+document.getElementById("secondTryScore").innerText = points;
+
+}
+
+}
+
 function updateTryTables(){
 
 let first = document.getElementById("firstTryScore");
@@ -849,5 +865,6 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
