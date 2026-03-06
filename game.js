@@ -355,7 +355,15 @@ playerName = name;
 roomCode = room;
 
 activateRealtimeRanking();
-    
+
+// registrar jugador con 0 puntos desde el inicio
+firebase.database()
+.ref("rooms/"+roomCode+"/players/"+playerName)
+.set({
+   name: playerName,
+   score: 0
+});
+
 startScreen.style.display="none";
 
 music.volume=.4;
@@ -853,6 +861,7 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
