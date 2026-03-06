@@ -753,7 +753,11 @@ function drawRanking(){
    .forEach((player,index)=>{
 
       let li = document.createElement("li");
-      li.className = "player";
+li.className = "player";
+
+if(player.name === playerName){
+li.classList.add("currentPlayer");
+}
 
       li.innerHTML =
          "<span>"+(index+1)+". "+player.name+"</span>" +
@@ -865,6 +869,7 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
