@@ -504,4 +504,13 @@ html{
 #gameWrapper{
     transform: scale(0.87);
     transform-origin: top center;
+
+}
+
+.currentPlayer{
+
+border:2px solid cyan;
+box-shadow:0 0 12px cyan;
+background:rgba(0,255,255,0.1);
+
 }
