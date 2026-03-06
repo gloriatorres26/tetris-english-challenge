@@ -189,10 +189,6 @@ board[y+piece.y][x+piece.x]=value;
 })
 
 score+=10;
-
-scoreText.innerText=score;
-
-score+=10;
 scoreText.innerText=score;
 
 pieceCounter++;
@@ -789,16 +785,6 @@ document.getElementById("secondTryScore").innerText = secondTryScore;
 
 function updateTryTables(){
 
-let first = document.getElementById("firstTryScore");
-let second = document.getElementById("secondTryScore");
-
-if(first) first.innerText = firstTryScore ?? "-";
-if(second) second.innerText = secondTryScore ?? "-";
-
-}
-
-function updateTryTables(){
-
 let firstTable = document.getElementById("firstTryScore");
 let secondTable = document.getElementById("secondTryScore");
 
@@ -856,12 +842,18 @@ board = Array.from({length:ROWS},()=>Array(COLS).fill(0));
 
 piece = randomPiece();
 
+pieceCounter = 0;
+
+fallSpeed = 700;
+speedIncreaseCount = 0;
+
 document.getElementById("gameOver").classList.add("hidden");
 
 clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
