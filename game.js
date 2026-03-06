@@ -769,17 +769,19 @@ li.classList.add("currentPlayer");
 
 }
 
-function saveTryScore(points){
+function saveTryScore(){
 
-if(firstTry === null){
+if(currentTry === 1){
 
-firstTry = points;
-document.getElementById("firstTryScore").innerText = points;
+firstTryScore = score;
+document.getElementById("firstTryScore").innerText = firstTryScore;
 
-}else if(secondTry === null){
+currentTry = 2;
 
-secondTry = points;
-document.getElementById("secondTryScore").innerText = points;
+}else{
+
+secondTryScore = score;
+document.getElementById("secondTryScore").innerText = secondTryScore;
 
 }
 
@@ -869,6 +871,7 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
