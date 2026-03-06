@@ -847,30 +847,22 @@ function activateRealtimeRanking(){
 
 function playAgain(){
 
-// guardar intento
-saveTryScore(score);
+saveTryScore();
 
-// resetear puntaje
 score = 0;
-scoreText.innerText = 0;
+scoreText.innerText = score;
 
-// resetear tablero
 board = Array.from({length:ROWS},()=>Array(COLS).fill(0));
 
-// nueva pieza
 piece = randomPiece();
 
-// cerrar pantalla game over
 document.getElementById("gameOver").classList.add("hidden");
 
-// reiniciar velocidad
-fallSpeed = 700;
-
-// reiniciar juego
 clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
