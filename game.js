@@ -47,6 +47,7 @@ let score=0;
 
 let firstTryScore = null;
 let secondTryScore = null;
+let currentTry = 1;
 
 let lastPieceIndex = null;
 
@@ -812,3 +813,35 @@ function activateRealtimeRanking(){
 
 }
 
+function playAgain(){
+
+// guardar puntaje del intento
+if(currentTry === 1){
+    firstTryScore = score;
+    currentTry = 2;
+}else{
+    secondTryScore = score;
+}
+
+updateTryTables();
+
+// resetear juego
+score = 0;
+scoreText.innerText = 0;
+
+board = Array.from({length:ROWS},()=>Array(COLS).fill(0));
+
+piece = randomPiece();
+
+fallSpeed = 700;
+speedIncreaseCount = 0;
+pieceCounter = 0;
+
+// ocultar game over
+document.getElementById("gameOver").classList.add("hidden");
+
+// reiniciar loop
+clearInterval(gameLoop);
+gameLoop = setInterval(update, fallSpeed);
+
+}
