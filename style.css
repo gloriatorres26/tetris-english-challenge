@@ -514,3 +514,43 @@ box-shadow:0 0 12px cyan;
 background:rgba(0,255,255,0.1);
 
 }
+
+#timerBox{
+
+position: absolute;
+
+top: 120px;
+
+right: 60px;
+
+width: 140px;
+
+text-align:center;
+
+background:black;
+
+border:3px solid cyan;
+
+border-radius:12px;
+
+box-shadow:0 0 20px cyan;
+
+padding:10px;
+
+font-family:monospace;
+
+color:cyan;
+
+}
+
+#gameTimerDisplay{
+
+font-size:32px;
+
+font-weight:bold;
+
+margin-top:5px;
+
+text-shadow:0 0 10px cyan;
+
+}
