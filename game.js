@@ -846,6 +846,14 @@ saveTryScore();
 score = 0;
 scoreText.innerText = score;
 
+// resetear score en ranking también
+firebase.database()
+.ref("rooms/"+roomCode+"/players/"+playerName)
+.set({
+   name: playerName,
+   score: 0
+});
+    
 board = Array.from({length:ROWS},()=>Array(COLS).fill(0));
 
 piece = randomPiece();
@@ -861,6 +869,7 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
