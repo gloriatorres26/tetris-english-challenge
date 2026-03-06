@@ -767,6 +767,16 @@ function drawRanking(){
 
 function updateTryTables(){
 
+let first = document.getElementById("firstTryScore");
+let second = document.getElementById("secondTryScore");
+
+if(first) first.innerText = firstTryScore ?? "-";
+if(second) second.innerText = secondTryScore ?? "-";
+
+}
+
+function updateTryTables(){
+
 let firstTable = document.getElementById("firstTryScore");
 let secondTable = document.getElementById("secondTryScore");
 
@@ -845,3 +855,4 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
