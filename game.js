@@ -853,6 +853,14 @@ firebase.database()
    name: playerName,
    score: 0
 });
+
+// guardar FIRST TRY
+firebase.database()
+.ref("rooms/"+roomCode+"/firstTry/"+playerName)
+.set({
+   name: playerName,
+   score: score
+});
     
 board = Array.from({length:ROWS},()=>Array(COLS).fill(0));
 
@@ -869,6 +877,7 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
