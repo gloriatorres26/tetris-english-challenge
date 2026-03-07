@@ -555,6 +555,42 @@ text-shadow:0 0 10px cyan;
 
 }
 
+#firstTryBox{
+
+position:absolute;
+right:60px;
+top:260px;
+
+background:black;
+border:3px solid cyan;
+
+padding:15px;
+width:150px;
+
+text-align:center;
+
+box-shadow:0 0 15px cyan;
+
+font-family:monospace;
+}
+
+#firstTryBox h3{
+
+color:cyan;
+margin-bottom:10px;
+font-size:18px;
+}
+
+#firstTryScore{
+
+font-size:28px;
+color:white;
+
+text-shadow:
+0 0 5px cyan,
+0 0 10px cyan;
+
+}
 
 
 
