@@ -598,15 +598,22 @@ z-index:999;
 
 }
 
+#firstTryScore{
 
+font-size:42px;
 
+font-weight:bold;
 
+color:white;
 
+margin-top:10px;
 
+text-shadow:
+0 0 5px cyan,
+0 0 10px cyan,
+0 0 20px cyan;
 
-
-
-
+}
 
 
 
