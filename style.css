@@ -574,23 +574,32 @@ box-shadow:0 0 15px cyan;
 font-family:monospace;
 }
 
-#firstTryBox h3{
+#firstTryBox{
 
-color:cyan;
-margin-bottom:10px;
-font-size:18px;
+position:absolute;
+
+right:60px;
+top:420px;
+
+background:black;
+
+border:3px solid cyan;
+
+padding:18px;
+width:170px;
+
+text-align:center;
+
+box-shadow:0 0 15px cyan;
+
+font-family:monospace;
+
+border-radius:14px;
+
+z-index:1;
+
 }
 
-#firstTryScore{
-
-font-size:28px;
-color:white;
-
-text-shadow:
-0 0 5px cyan,
-0 0 10px cyan;
-
-}
 
 
 
