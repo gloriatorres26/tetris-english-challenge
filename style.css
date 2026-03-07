@@ -578,7 +578,7 @@ font-family:monospace;
 
 position:absolute;
 
-right:-460px;
+left:260px;
 top:220px;
 
 background:black;
@@ -599,6 +599,7 @@ border-radius:14px;
 z-index:1;
 
 }
+
 
 
 
