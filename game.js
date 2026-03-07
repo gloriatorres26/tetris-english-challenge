@@ -882,12 +882,22 @@ firebase.database()
    score: 0
 });
 
-// guardar FIRST TRY
+// guardar FIRST TRY solo si no existe
 firebase.database()
 .ref("rooms/"+roomCode+"/firstTry/"+playerName)
-.set({
-   name: playerName,
-   score: score
+.once("value", function(snapshot){
+
+   if(!snapshot.exists()){
+
+      firebase.database()
+      .ref("rooms/"+roomCode+"/firstTry/"+playerName)
+      .set({
+         name: playerName,
+         score: firstTryScore
+      });
+
+   }
+
 });
     
 board = Array.from({length:ROWS},()=>Array(COLS).fill(0));
@@ -905,6 +915,7 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
