@@ -558,27 +558,8 @@ text-shadow:0 0 10px cyan;
 #firstTryBox{
 
 position:fixed;
-right:60px;
-top:260px;
 
-background:black;
-border:3px solid cyan;
-
-padding:15px;
-width:150px;
-
-text-align:center;
-
-box-shadow:0 0 15px cyan;
-
-font-family:monospace;
-}
-
-#firstTryBox{
-
-position:fixed;
-
-rigth:600px;
+right:600px;
 top:220px;
 
 background:black;
@@ -599,6 +580,7 @@ border-radius:14px;
 z-index:10;
 
 }
+
 
 
 
