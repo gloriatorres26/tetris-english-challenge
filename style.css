@@ -612,9 +612,12 @@ text-shadow:
 
 }
 
+#firstTryName{
 
+font-size:18px;
 
+color:cyan;
 
+margin-top:5px;
 
-
-
+}
