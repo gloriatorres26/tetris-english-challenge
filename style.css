@@ -559,7 +559,7 @@ text-shadow:0 0 10px cyan;
 
 position:fixed;
 
-left:40px;
+left:10px;
 top:260px;
 
 background:black;
@@ -579,4 +579,5 @@ border-radius:14px;
 z-index:999;
 
 }
+
 
