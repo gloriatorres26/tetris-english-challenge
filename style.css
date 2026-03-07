@@ -557,9 +557,16 @@ text-shadow:0 0 10px cyan;
 
 #firstTryBox{
 
-position:fixed;
-top: 100px;
-left: 72px;
+background:black;
+border:3px solid cyan;
+padding:18px;
+width:170px;
+text-align:center;
+box-shadow:0 0 15px cyan;
+font-family:monospace;
+border-radius:14px;
+
+}
 
 background:black;
 border:3px solid cyan;
@@ -578,6 +585,7 @@ border-radius:14px;
 z-index:999;
 
 }
+
 
 
 
