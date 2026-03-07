@@ -557,9 +557,9 @@ text-shadow:0 0 10px cyan;
 
 #firstTryBox{
 
-position: fixed;
+position:fixed;
 top: 120px;
-left: 5px;
+left: 205px;
 
 background:black;
 border:3px solid cyan;
@@ -578,6 +578,7 @@ border-radius:14px;
 z-index:999;
 
 }
+
 
 
 
