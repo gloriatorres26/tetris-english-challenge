@@ -833,6 +833,34 @@ function activateRealtimeRanking(){
    .on("value", function(snapshot){
 
       players = snapshot.val() || {};
+
+firebase.database()
+.ref("rooms/"+roomCode+"/firstTry")
+.on("value", snapshot => {
+
+   const data = snapshot.val();
+
+   if(!data) return;
+
+   let bestScore = 0;
+   let bestPlayer = "";
+
+   Object.values(data).forEach(player => {
+
+      if(player.score > bestScore){
+
+         bestScore = player.score;
+         bestPlayer = player.name;
+
+      }
+
+   });
+
+   document.getElementById("firstTryScore").innerText =
+   bestPlayer + " - " + bestScore;
+
+});
+       
       drawRanking();
 
    });
@@ -877,6 +905,7 @@ clearInterval(gameLoop);
 gameLoop = setInterval(update, fallSpeed);
 
 }
+
 
 
 
